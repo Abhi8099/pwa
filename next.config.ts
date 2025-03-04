@@ -1,17 +1,13 @@
-/** @type {import ('next').NextConfig} */
-import withPWA from 'next-pwa'
-
-const nextConfig = {
-  distDir: "build",
-  reactStrictMode: true,
-  compiler: {
-    removeConsole: process.env.NODE_ENV === "development"
-  },
-};
-
-export default withPWA({
+/* eslint-disable @typescript-eslint/no-require-imports */
+const withPWA = require("next-pwa")({
   dest: "public",
-  disable: process.env.NODE_ENV === "development",
   register: true,
   skipWaiting: true,
-})(nextConfig);
+  disable: process.env.NODE_ENV === "development", // Enable PWA only in production
+});
+
+const nextConfig = withPWA({
+  reactStrictMode: true,
+});
+
+export default nextConfig;
