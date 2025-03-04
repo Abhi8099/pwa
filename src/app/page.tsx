@@ -214,7 +214,7 @@ export default function Page() {
                     exit={{ opacity: 0, height: 0 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <motion.p variants={itemVariants} className="text-green-600 mb-4 flex items-center">
+                    <motion.p variants={itemVariants} className="text-indigo-600 mb-4 flex items-center">
                       <Check size={18} className="mr-2" />
                       You are subscribed to push notifications
                     </motion.p>
